@@ -1,0 +1,55 @@
+site_description: FHIR - 医疗信息系统互联互通新思路
+google_analytics: UA-46852172-3
+root_domain: cn.FHIRjs.org
+FHIR_version: 2.5.16
+platinum_sponsors_china:
+  - url: 'http://www.dcloud.io/?hmsr=FHIRjsorg&hmpl=&hmcu=&hmkw=&hmci='
+    img: dcloud.gif
+video_sponsors_china:
+  - url: http://cloud.youku.com/index.php?source=FHIRjs
+    img: youku.png
+special_sponsors:
+  - url: 'https://stdlib.com/'
+    img: stdlib.png
+    description: 几分钟内在云端构建发布 API，免费试用。
+platinum_sponsors:
+  - url: >-
+      https://me.modian.com/u/detail?uid=4019000&_ga=2.28262140.1770280080.1550655131-976480842.1550655131
+    img: liuhui.png
+    name: liuhui
+  - url: >-
+      https://me.modian.com/u/detail?uid=4047244&_ga=2.200669934.1770280080.1550655131-976480842.1550655131
+    img: majin.jpg
+    name: majin
+  - url: >-
+      https://me.modian.com/u/detail?uid=4045875&_ga=2.208534994.1770280080.1550655131-976480842.1550655131
+    img: mengdream.jpg
+    name: mengdream   
+  - url: >-
+      https://me.modian.com/u/detail?uid=4018460&_ga=2.233322206.1770280080.1550655131-976480842.1550655131
+    img: buwangji.jpg
+    name: buwangji   
+  - url: >-
+      https://me.modian.com/u/detail?uid=4044716&_ga=2.237895232.1770280080.1550655131-976480842.1550655131
+    img: xsl.jpg
+    name: xsl    
+  - url: >-
+      https://me.modian.com/u/detail?uid=4044687&_ga=2.31904254.1770280080.1550655131-976480842.1550655131
+    img: daibaoming.jpg
+    name: 戴宝明   
+  - url: >-
+      https://me.modian.com/u/detail?uid=4018460&_ga=2.233322206.1770280080.1550655131-976480842.1550655131
+    img: jingtong.jpg
+    name: 荆通                      
+gold_sponsors:
+  - url: 'https://www.FHIRmastery.com/'
+    img: FHIRmastery.png
+    name: FHIRMastery
+silver_sponsors:
+  - url: 'https://dopamine.bg/'
+    img: dopamine.png
+    name: Dopamine
+bronze_sponsors:
+  - url: 'http://tighten.co/'
+    img: tighten_co.png
+    name: Tighten.co

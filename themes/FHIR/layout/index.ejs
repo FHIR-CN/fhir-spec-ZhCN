@@ -1,0 +1,160 @@
+<div class="sidebar">
+  <div class="sidebar-inner-index">
+    <ul class="main-menu">
+      <%- partial('partials/main_menu', { context: 'sidebar' }) %>
+    </ul>
+  </div>
+</div>
+
+<div id="hero">
+  <div class="inner">
+    <div class="left">
+      <img class="hero-logo" src="<%- url_for("/images/logo.png") %>" alt="FHIR logo">
+    </div><div class="right">
+      <h2 class="FHIR">FHIR</h2>
+      <h1>
+        互联互通医疗大数据新思路
+      </h1>
+      <p>
+        <a id="modal-player" class="button has-icon" href="javascript:;">
+          <%- partial('icons/play') %>
+          WHY FHIR?</a>
+        <a class="button white" href="<%- url_for("/v2/guide/") %>">起步</a>
+        <a class="button gray has-icon" href="https://github.com/FHIR-CN/fhir-spec" target="_blank">
+          <%- partial('icons/github-dark') %>
+          GITHUB</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- <div id="special-sponsor">
+  <h3>特别赞助</h3>
+  <%_ for (const sponsor of theme.platinum_sponsors_china) { _%>
+  <a href="<%- sponsor.url %>" target="_blank">
+    <img src="<%- url_for(`/images/${sponsor.img}`) %>" style="width:200px">
+  </a>
+  <%_ } _%>
+  <%_if (theme.platinum_sponsors_china.length < 2) { _%>
+  <br>
+  <a class="become-backer" href="/support-FHIR/#special-sponsor-china">
+    成为特别赞助商
+  </a>
+  <%_} _%>
+</div> -->
+
+<div id="highlights">
+  <div class="inner">
+    <div class="point">
+      <h2>接地气</h2>
+      <p>HTTP、JSON、GraphQL、PB等<br>
+        成熟互联网技术在医疗领域的应用！</p>
+    </div>
+
+    <div class="point">
+      <h2>够全面</h2>
+      <p>从临床到管理，从模型到术语，从概念到代码，从标准到定制，从国外到国内</p>
+    </div>
+
+    <div class="point">
+      <h2>够先进</h2>
+      <p>
+        从V2\V3\CDA——>演化到FHIR<br>
+        支持CDSS和质控 <br>
+        支持跨科室、跨机构的面向真实世界数据的科研
+      </p>
+    </div>
+  </div>
+</div>
+
+<div id="sponsors">
+  <div class="inner">
+    <%- partial('partials/sponsors') %>
+  </div>
+</div>
+
+<!-- <div id="news">
+  <div class="inner">
+    <h3><label for="member_email">订阅我们的周刊 (英文)</label></h3>
+    <form
+      class="newsletter-form"
+      id="reFHIR-form"
+      name="reFHIR-form"
+      target="_blank"
+      action="https://www.getreFHIR.co/profile/FHIRnewsletter/add_subscriber"
+      method="post"
+      @submit="subscribe"
+    >
+      <input
+        class="newsletter-input"
+        type="email"
+        name="member[email]"
+        id="member_email"
+        required
+        placeholder="邮件地址"
+      >
+      <input
+        class="button newsletter-button"
+        type="submit"
+        value="订阅"
+        name="member[subscribe]"
+        id="member_submit"
+      >
+    </form>
+    <p>
+      你可以在 <a href="https://news.FHIRjs.org" target="_blank">news.FHIRjs.org</a> 翻阅往期的 issue，也可以收听 podcast。
+    </p>
+  </div>
+</div> -->
+
+<div id="footer">
+  <p>
+    <a class="social-icon" href="https://github.com/FHIR-CN/fhir-spec" target="_blank">
+      <%- partial('icons/github') %>
+    </a>
+
+    <a class="social-icon" href="https://weibo.com/7003536698/profile?is_all=1" target="_blank">
+      <%- partial('icons/weibo') %>
+    </a>
+  </p>
+  <p>遵循 <a href="https://opensource.org/licenses/MIT" target="_blank">MIT 开源协议</a><br>
+  Copyright &copy; 2014-<%- new Date().getFullYear() %> Wang Haisheng</p>
+</div>
+
+<div id="video-modal" class="modal">
+  <div class="video-space" style="padding: 56.25% 0 0 0; position: relative;"></div>
+</div>
+
+<script>
+(function () {
+  var topScrolled = false
+  var sponsors = document.getElementById('sponsors')
+  var sponsorTop = sponsors.offsetTop
+  var sponsorActive = false
+
+  window.addEventListener('resize', function () {
+    sponsorTop = sponsors.offsetTop
+  })
+
+  window.addEventListener('scroll', function () {
+    if (window.pageYOffset > 165 && !topScrolled) {
+      topScrolled = true
+      document.getElementById('mobile-bar').classList.remove('top')
+    } else if (window.pageYOffset <= 165 && topScrolled) {
+      topScrolled = false
+      document.getElementById('mobile-bar').classList.add('top')
+    }
+    if (window.pageYOffset > sponsorTop - 100) {
+      if (!sponsorActive) {
+        sponsorActive = true
+        sponsors.classList.add('active')
+      }
+    } else {
+      if (sponsorActive) {
+        sponsorActive = false
+        sponsors.classList.remove('active')
+      }
+    }
+  })
+})()
+</script>

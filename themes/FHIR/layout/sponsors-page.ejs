@@ -1,0 +1,116 @@
+<h1>赞助 fhir-cn 的研发</h1>
+
+<p>
+FHIR-CN是采用 MIT 许可的开源项目，使用完全免费。
+但是随着项目规模的增长，也需要有相应的资金支持才能持续项目的维护的开发。你可以通过下列的方法来赞助 FHIR 的开发。
+</p>
+
+<h2 id="One-time-Donations">一次性赞助</h2>
+
+<p>我们通过以下方式接受赞助：</p>
+
+微信请添加小助手：edwin_whs
+
+
+
+<!-- <h2 id="Sticker">购买贴纸</h2>
+
+你也可以通过 <a href="https://www.smallsticker.com/%E8%B4%B4%E7%BA%B8/FHIR.html" target="_blank">购买我们官方授权的贴纸</a> 的方式来支持 FHIR - 每售出一张贴纸，我们将获得 2 元的捐赠。 -->
+
+<h2 id="Recurring-Pledges">周期性赞助</h2>
+
+<p>
+周期性赞助可以获得额外的回报，比如你的名字会出现在 FHIR 的 GitHub 仓库中，再比如你的公司 logo 会出现在我们的官网上。
+</p>
+
+<ul>
+
+  <li>
+    <a href="https://t.modian.com/project/49639.html?_ga=2.41210210.1770280080.1550655131-976480842.1550655131">通过 摩点网 赞助</a> (加入一个云养计划，通过透明的费用模型支持社区的工作和活动)
+  </li>
+</ul>
+
+<h2>当前的顶级赞助商</h2>
+
+<h3>特别赞助商</h3>
+
+<p class="platinum">
+<%_ for (const sponsor of theme.special_sponsors) {_%>
+  <a href="<%- sponsor.url %>" target="_blank">
+    <img src="<%- url_for(`/images/${sponsor.img}`) %>"<%- (sponsor.big_width || sponsor.big_height) ? ` style="${sponsor.big_width ? `width:${sponsor.big_width};`: ``}${sponsor.big_height ? `height:${sponsor.big_height};` : ``}"` : `` %>>
+  </a>
+<%_ } _%>
+</p>
+
+<h3 id="special-sponsor-china">特别赞助商 (中国区)</h3>
+
+<%_ if (theme.platinum_sponsors_china.length) { _%>
+
+<p class="platinum">
+<%_ for (const sponsor of theme.platinum_sponsors_china) {_%>
+  <a href="<%- sponsor.url %>" target="_blank">
+    <img src="<%- url_for(`/images/${sponsor.img}`) %>"<%- (sponsor.big_width || sponsor.big_height) ? ` style="${sponsor.big_width ? `width:${sponsor.big_width};`: ``}${sponsor.big_height ? `height:${sponsor.big_height};` : ``}"` : `` %>>
+  </a>
+<%_ } _%>
+</p>
+
+<%_ } _%>
+<%_ if (theme.platinum_sponsors_china.length < 2) { _%>
+
+<p>中文区特别赞助商仅有两个名额。赞助商的 logo 或广告会出现在：</p>
+
+<ul>
+  <li>本页面</li>
+  <li>中文站文档的每一页（左上角或右下角）</li>
+  <li>中文文档站首页</li>
+  <li>FHIR GitHub 仓库的 README 中</li>
+</ul>
+
+<p>FHIR 的中文文档有400万+的月 PV 和40万+的月活跃用户，并且能够精准地定位开发者群体。有兴趣的赞助商请通过 <a href="mailto:sponsor@FHIRjs.org">sponsor@FHIRjs.org</a> 联系我们。
+</p>
+
+<%_ } _%>
+
+<h3> 白金赞助商</h3>
+
+<p class="platinum">
+<%_ for (const sponsor of theme.platinum_sponsors) {_%>
+  <a href="<%- sponsor.url %>" target="_blank">
+    <img src="<%- url_for(`/images/${sponsor.img}`) %>">
+  </a>
+<%_ } _%>
+</p>
+
+
+<h3> 黄金赞助商</h3>
+
+<p class="patreon-sponsors sponsor-section">
+<%_ for (const sponsor of theme.gold_sponsors) {_%>
+  <a href="<%- sponsor.url %>" target="_blank">
+    <img src="<%- url_for(`/images/${sponsor.img}`) %>">
+  </a>
+<%_ } _%>
+</p>
+
+
+
+<h3> 白银赞助商</h3>
+
+<p class="patreon-sponsors sponsor-section">
+<%_ for (const sponsor of theme.silver_sponsors) {_%>
+  <a href="<%- sponsor.url %>" target="_blank">
+    <img src="<%- url_for(`/images/${sponsor.img}`) %>">
+  </a>
+<%_ } _%>
+</p>
+
+
+
+
+<p>
+如果你是企业经营者并且将 FHIR 用在商业产品中，那么赞助 FHIR 有商业上的益处：<b>可以让你的产品所依赖的框架保持健康并得到积极的维护</b>，也能帮助你在 FHIR 社区里获得更高的曝光度，从而更容易地吸引到 FHIR 开发者。
+</p>
+
+<p>
+如果你是个人开发者并且享受 FHIR 带来的高开发效率，可以用捐助来表示你的谢意 —— 就好像偶尔给我买杯咖啡 :)
+</p>
