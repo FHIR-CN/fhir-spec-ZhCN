@@ -9,12 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     <link rel="alternate" hreflang="x-default" href="https://FHIRjs.org/<%- page.path %>">
-    <link rel="alternate" hreflang="zh" href="https://cn.FHIRjs.org/<%- page.path %>">
+    <link rel="alternate" hreflang="zh" href="https://cn.fhir.org/<%- page.path %>">
     <link rel="alternate" hreflang="ja" href="https://jp.FHIRjs.org/<%- page.path %>">
     <link rel="alternate" hreflang="ru" href="https://ru.FHIRjs.org/<%- page.path %>">
-    <link rel="alternate" hreflang="ko" href="https://kr.FHIRjs.org/<%- page.path %>">
-    <link rel="alternate" hreflang="pt-BR" href="https://br.FHIRjs.org/<%- page.path %>">
-    <link rel="alternate" hreflang="fr" href="https://fr.FHIRjs.org/<%- page.path %>">
 
     <meta property="og:type" content="article">
     <meta property="og:title" content="<%- page.title ? page.title + ' — ' : '' %>FHIR">
@@ -110,7 +107,7 @@
       if (!document.querySelector(selector)) return
       // search index defaults to v2
       var match = window.location.pathname.match(/^\/(v\d+)/)
-      var version = match ? match[1] : 'v2'
+      var version = match ? match[1] : 'v4'
       docsearch({
       appId: 'BH4D9OD16A',
       apiKey: '5638280abff9d207417bb03be05f0b25',

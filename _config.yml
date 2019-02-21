@@ -3,7 +3,7 @@
 ## Source: https://github.com/tommy351/hexo/
 
 # Site
-title: FHIR
+title: FHIR 
 subtitle:
 description: "互联互通新思路"
 author: Wang Haisheng 
@@ -148,44 +148,44 @@ feed:
   limit: 20
 
 alias:
-  api/index.html: v2/api/index.html
-  guide/class-and-style.html: v2/guide/class-and-style.html
-  guide/comparison.html: v2/guide/comparison.html
-  guide/components.html: v2/guide/components.html
-  guide/computed.html: v2/guide/computed.html
-  guide/conditional.html: v2/guide/conditional.html
-  guide/custom-directive.html: v2/guide/custom-directive.html
-  guide/deployment.html: v2/guide/deployment.html
-  guide/events.html: v2/guide/events.html
-  guide/forms.html: v2/guide/forms.html
-  guide/index.html: v2/guide/index.html
-  guide/installation.html: v2/guide/installation.html
-  guide/instance.html: v2/guide/instance.html
-  guide/join.html: v2/guide/join.html
-  guide/list.html: v2/guide/list.html
-  guide/migration-FHIR-router.html: v2/guide/migration-FHIR-router.html
-  guide/migration-FHIRx.html: v2/guide/migration-FHIRx.html
-  guide/migration.html: v2/guide/migration.html
-  guide/mixins.html: v2/guide/mixins.html
-  guide/plugins.html: v2/guide/plugins.html
-  guide/reactivity.html: v2/guide/reactivity.html
-  guide/render-function.html: v2/guide/render-function.html
-  guide/routing.html: v2/guide/routing.html
-  guide/single-file-components.html: v2/guide/single-file-components.html
-  guide/ssr.html: v2/guide/ssr.html
-  guide/state-management.html: v2/guide/state-management.html
-  guide/syntax.html: v2/guide/syntax.html
-  guide/transitioning-state.html: v2/guide/transitioning-state.html
-  guide/transitions.html: v2/guide/transitions.html
-  guide/unit-testing.html: v2/guide/unit-testing.html
-  examples/commits.html: v2/examples/commits.html
-  examples/elastic-header.html: v2/examples/elastic-header.html
-  examples/firebase.html: v2/examples/firebase.html
-  examples/grid-component.html: v2/examples/grid-component.html
-  examples/hackernews.html: v2/examples/hackernews.html
-  examples/index.html: v2/examples/index.html
-  examples/modal.html: v2/examples/modal.html
-  examples/select2.html: v2/examples/select2.html
-  examples/svg.html: v2/examples/svg.html
-  examples/todomvc.html: v2/examples/todomvc.html
-  examples/tree-view.html: v2/examples/tree-view.html
+  api/index.html: v4/api/index.html
+  guide/class-and-style.html: v4/guide/class-and-style.html
+  guide/comparison.html: v4/guide/comparison.html
+  guide/components.html: v4/guide/components.html
+  guide/computed.html: v4/guide/computed.html
+  guide/conditional.html: v4/guide/conditional.html
+  guide/custom-directive.html: v4/guide/custom-directive.html
+  guide/deployment.html: v4/guide/deployment.html
+  guide/events.html: v4/guide/events.html
+  guide/forms.html: v4/guide/forms.html
+  guide/index.html: v4/guide/index.html
+  guide/installation.html: v4/guide/installation.html
+  guide/instance.html: v4/guide/instance.html
+  guide/join.html: v4/guide/join.html
+  guide/list.html: v4/guide/list.html
+  guide/migration-FHIR-router.html: v4/guide/migration-FHIR-router.html
+  guide/migration-FHIRx.html: v4/guide/migration-FHIRx.html
+  guide/migration.html: v4/guide/migration.html
+  guide/mixins.html: v4/guide/mixins.html
+  guide/plugins.html: v4/guide/plugins.html
+  guide/reactivity.html: v4/guide/reactivity.html
+  guide/render-function.html: v4/guide/render-function.html
+  guide/routing.html: v4/guide/routing.html
+  guide/single-file-components.html: v4/guide/single-file-components.html
+  guide/ssr.html: v4/guide/ssr.html
+  guide/state-management.html: v4/guide/state-management.html
+  guide/syntax.html: v4/guide/syntax.html
+  guide/transitioning-state.html: v4/guide/transitioning-state.html
+  guide/transitions.html: v4/guide/transitions.html
+  guide/unit-testing.html: v4/guide/unit-testing.html
+  examples/commits.html: v4/examples/commits.html
+  examples/elastic-header.html: v4/examples/elastic-header.html
+  examples/firebase.html: v4/examples/firebase.html
+  examples/grid-component.html: v4/examples/grid-component.html
+  examples/hackernews.html: v4/examples/hackernews.html
+  examples/index.html: v4/examples/index.html
+  examples/modal.html: v4/examples/modal.html
+  examples/select2.html: v4/examples/select2.html
+  examples/svg.html: v4/examples/svg.html
+  examples/todomvc.html: v4/examples/todomvc.html
+  examples/tree-view.html: v4/examples/tree-view.html

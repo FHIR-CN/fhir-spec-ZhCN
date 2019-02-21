@@ -1,35 +1,43 @@
 <ul class="menu-root">
   <% ['api', 'style-guide'].indexOf(type) === -1 && site.pages.find({type: type}).sort('order').each(function (p) { %>
     <% var fileName = p.path.replace(/^.+?\/([\w-]+)\.html/, '$1') %>
-    <% if (type === 'guide') { %>
-      <% if (fileName === 'installation') { %>
-        <li><h3>基础</h3></li>
+    <% if (type === 'spec') { %>
+      <% if (fileName === 'toc') { %>
+        <li><h3>FHIR 标准入门</h3></li>
       <% } %>
-      <% if (fileName === 'components-registration') { %>
-        <li><h3>深入了解组件</h3></li>
+      <% if (fileName === 'foundation-module') { %>
+        <li><h3>模块二 基础版块</h3></li>
       <% } %>
-      <% if (fileName === 'transitions') { %>
-        <li><h3>过渡 & 动画</h3></li>
+      <% if (fileName === 'exchange-module') { %>
+        <li><h3>模块三 数据交换版块</h3></li>
       <% } %>
-      <% if (fileName === 'mixins') { %>
-        <li><h3>可复用性 & 组合</h3></li>
+      <% if (fileName === 'terminology-module') { %>
+        <li><h3>模块四 术语版块</h3></li>
       <% } %>
-      <% if (fileName === 'single-file-components') { %>
-        <li><h3>工具</h3></li>
+      <% if (fileName === 'conformance-module') { %>
+        <li><h3>模块五 标准符合性/一致性版块</h3></li>
       <% } %>
-      <% if (fileName === 'routing') { %>
-        <li><h3>规模化</h3></li>
+      <% if (fileName === 'secpriv-module') { %>
+        <li><h3>模块六 安全和隐私版块</h3></li>
       <% } %>
-      <% if (fileName === 'reactivity') { %>
-        <li><h3>内在</h3></li>
+      <% if (fileName === 'implsupport-module') { %>
+        <li><h3>模块七 开发实现版块</h3></li>
       <% } %>
-      <% if (fileName === 'migration') { %>
-        <li><h3>迁移</h3></li>
-      <% } %>
-      <% if (fileName === 'comparison') { %>
-        <li><h3>更多</h3></li>
-      <% } %>
-    <% } %>
+      <% if (fileName === 'administration-module') { %>
+        <li><h3>模块八 管理类资源版块</h3></li>
+      <% } %>                 
+      <% if (fileName === 'administration-module') { %>
+        <li><h3>模块九 管理类资源版块</h3></li>
+      <% } %>      
+      <% if (fileName === 'administration-module') { %>
+        <li><h3>模块十 管理类资源版块</h3></li>
+      <% } %>      
+      <% if (fileName === 'administration-module') { %>
+        <li><h3>模块十一 管理类资源版块</h3></li>
+      <% } %>      
+
+      
+      <% } %>    
     <li>
       <a href="<%- url_for(p.path) %>" class="sidebar-link<%- page.title === p.title ? ' current' : '' %><%- p.is_new ? ' new' : '' %>"><%- p.title %></a>
     </li>
