@@ -1,7 +1,7 @@
 ---
-title: 资源索引
-type: resources
-order: 1
+title: 1.2 资源索引
+type: spec
+order: 102
 ---
 
 ## 1.2 Resource Index[](resourcelist.html#1.2 "link to here")
