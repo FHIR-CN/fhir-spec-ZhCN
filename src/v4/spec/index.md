@@ -9,10 +9,12 @@ order: 102
 FHIR 是 HL7 组织发布的一种用于医疗健康数据交换的标准。
 
 
-### 翻译的工作
+### 翻译的工作开展
 
-从2015年迄今，我、张林老师、叶颜波老师都做过一些翻译的工作，但都不是完整版，
-目前想机器+人工校对方式完成R4版本的完整版，供大家学习之用。
+>从2015年迄今，我、张林老师、叶颜波老师都做过一些翻译的工作，但都不是完整版，目前想机器+人工校对方式完成R4版本的完整版，供大家学习之用。
+
+
+无论如何都得先注册一个github账号。
 
 #### 如果你是有编码经验和情节的
 step1：搞好自己本机的github环境，先clone下来整个repo把 
@@ -20,7 +22,27 @@ step1：搞好自己本机的github环境，先clone下来整个repo把
 git clone https://github.com/FHIR-CN/fhir-spec
 ```
 #### 如果你是小白，只需要使用浏览器即可完成操作。
-注册一个github账号即可，
+
+* step1：制作待翻译章节的英文md文件
+
+    * 找到你感兴趣的fhir标准原文所在的章节，假如是[3.1.0](http://hl7.org/fhir/http.html)，使用任意浏览器打开此网页，右键查看网页源代码，全选所有html代码复制即可，
+    
+    * 打开[html——>markdown 在线转换工具](http://domchristie.github.io/turndown/)，将复制的html代码复制到左侧的框中，等待片刻，将右侧框中的内容全选复制出来。
+
+    * 打开[第三部分 机器翻译初稿](https://github.com/FHIR-CN/fhir-spec/tree/r4/src/v4/module03)目录，使用"Create new file"，文件命名“http.md”，与原始标准文件保持一致，将上一步复制的内容拷贝到文件中即可。(可稍微删去一些诸如页眉页脚等无用代码)
+
+* step2：使用机器翻译工具制作待翻译章节的中文机器翻译md文件
+
+    * 新建一个文件，命名为"http-translate.md",
+    
+    * 使用[翻译工具](https://fanyi.transgod.cn/),将翻译好的内容复制到新建的文件中。
+
+
+* step3：校对人员对第二步产生的文件进行校对，在机器翻译文件中提出修改意见，讨论期过后将此机器翻译文件转移到[校对完整版目录下](https://github.com/FHIR-CN/fhir-spec/tree/r4/src/v4/spec)
+
+
+
+
 
 
 
