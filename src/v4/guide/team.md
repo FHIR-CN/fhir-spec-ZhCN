@@ -140,10 +140,10 @@ order: 803
         </template>
       </button>
     </h2>
-
+<!-- 
     <p v-if="errorGettingLocation" class="tip">
       未成功获取您的位置。
-    </p>
+    </p> -->
 
     <p>
       FHIR 的研发及其生态建设出自一个国际化的团队，这里会展示其中部分团队成员的信息。
@@ -197,10 +197,10 @@ order: 803
         </template>
       </button>
     </h2>
-
+<!-- 
     <p v-if="errorGettingLocation" class="tip">
       未成功获取您的位置。
-    </p>
+    </p> -->
 
     <p>
       一些 FHIR 的社区成员让这里变得更加丰富多彩，有必要在此特别提及。我们与这些主要合作伙伴建立了更加亲密的关系，经常与他们就即将到来的功能和新闻展开协作。

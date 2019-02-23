@@ -8,6 +8,28 @@ order: 102
 
 FHIR 是 HL7 组织发布的一种用于医疗健康数据交换的标准。
 
+
+### 翻译的工作
+
+从2015年迄今，我、张林老师、叶颜波老师都做过一些翻译的工作，但都不是完整版，
+目前想机器+人工校对方式完成R4版本的完整版，供大家学习之用。
+
+#### 如果你是有编码经验和情节的
+step1：搞好自己本机的github环境，先clone下来整个repo把 
+```
+git clone https://github.com/FHIR-CN/fhir-spec
+```
+#### 如果你是小白，只需要使用浏览器即可完成操作。
+注册一个github账号即可，
+
+
+
+
+
+
+
+
+
 ### 首次接触
 
 See the [executive summary](summary.html), the [developer's introduction](overview-dev.html), [clinical introduction](overview-clinical.html), or [architect's introduction](overview-arch.html), and then the FHIR [overview / roadmap](overview.html) & [Timelines](versions.html). See also the [open license](license.html) (and don't miss the full [Table of Contents](toc.html) and the [Community Credits](credits.html) or you can [search this specification](search.cfm)).
