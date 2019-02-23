@@ -34,8 +34,8 @@ $ npm start # 开发服务器地址为 http://localhost:4000
 
 ## 致谢
 
-网站在创立之初得到了很多朋友们的帮助，大家一起分工协作完成了整站的翻译工作。[这个页面](https://cn.fhir.org/about/)集中记录了大家这段时期的努力和付出，以表谢意！
+网站在创立之初得到了很多朋友们的帮助，大家一起分工协作完成了整站的翻译工作。[这个页面](https://fhircn.netlify.com/about/)集中记录了大家这段时期的努力和付出，以表谢意！
 
 **感谢所有参与翻译的朋友们！**
 
-目前网站以处于维护状态，最新的文档/翻译贡献情况可以参阅 GitHub 提供的 [contributors](https://github.com/FHIRjs/cn.fhir.org/graphs/contributors) 页面。
+目前网站以处于维护状态，最新的文档/翻译贡献情况可以参阅 GitHub 提供的 [contributors](https://github.com/FHIR-CN/fhir-spec/graphs/contributors) 页面。

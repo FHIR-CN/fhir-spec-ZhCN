@@ -1,6 +1,6 @@
 site_description: FHIR - 医疗信息系统互联互通新思路
 google_analytics: UA-46852172-3
-root_domain: cn.FHIRjs.org
+root_domain: fhircn.netlify.com
 FHIR_version: 2.5.16
 platinum_sponsors_china:
   - url: 'http://www.dcloud.io/?hmsr=FHIRjsorg&hmpl=&hmcu=&hmkw=&hmci='
