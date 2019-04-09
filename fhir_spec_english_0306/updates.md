@@ -1,0 +1,62 @@
+\[%settitle Updates%\]
+\[%file newnavbar%\]
+Variations between Submitted data and Retrieved data
+----------------------------------------------------
+
+|                                                |                                             |                                                                                      |
+|------------------------------------------------|---------------------------------------------|--------------------------------------------------------------------------------------|
+| [\[%wgt fhir%\]](%5B%wg%20fhir%%5D) Work Group | [Maturity Level](versions.html#maturity): 5 | [Standards Status](versions.html#std-process):[Trial Use](versions.html#std-process) |
+
+<span id="community"></span>
+Some of the time when using a FHIR interface, requests to create or update resource instances will behave exactly as the initiator requested. The desired record(s) will be created or revised within the target system and a subsequent query of the data would show the exact same information as was submitted. However, FHIR systems are not guaranteed to behave this way. Without any other agreement between exchange partners, FHIR systems are not obligated to store and return data as it was received. In fact, for some interoperability paradigms, they're not obligated to store any data at all. This page discusses some of the considerations around system behavior, including differences in expectations for systems interoperating using REST, messaging, documents and services.
+
+### Data element support
+
+The most common reason for differences between what data is submitted to a system and what data can be extracted from it is that the system doesn't support all of the data elements present in the instance received. In the base resource, no systems are required to support any particular set of extensions or even any particular subset of core elements.
+
+For elements that are part of the resource, the expectation is that "most" systems will support the element. i.e. most systems will support capturing a patient's name, gender and date of birth. But "most" does not mean "all". It is possible to be fully FHIR conformant and claim to support the Patient resource, but be incapable of storing any of those data elements. There are use-cases where names may be unnecessary (e.g. agricultural veterinary systems, anonymized reporting, etc.) and similar use-cases for almost every data element. No FHIR resource elements start off as [mustSupport](elementdefinition-definitions.html#ElementDefinition.mustSupport) and very few resource elements start off with a minimum cardinality other than "0".
+
+In the case of extensions, the very nature of a concept being an extension means that the designers of the specification expected that fewer than "most" systems would support the element, though support might vary widely by context. An extension might be used by 100% of systems in some country, discipline, etc. and not used by any systems in another context. In any event, there is no guarantee that an arbitrary receiver will recognize and be able to persist any given extension.
+
+In order to know whether a particular data element is likely to be stored by a given server, a client should check the [Capability statement](capabilitystatement.html) of that server. If, for a given resource, the [StructureDefinition](structuredefinition.html) pointed to indicates that the element or extension is "mustSupport=true", and the server is capable of storing and returning data in general, then it would be expected that the system will be capable of storing and returning that data element. (Some servers such as decision support systems might not be capable of storing or returning any received data.)
+
+All of these concerns around possibly not storing resource elements or extensions can hold whether the data is sent using [REST](http.html), [Messaging](messaging.html) or [Services](services.html). However, with [documents](documents.html), a consuming system is expected to accept the entire contents of the document without losing any information or altering it in any way.
+
+### System behavior
+
+Even if a system supports all of the data elements provided, not all systems will actually persist the data received or be capable of returning it in response to a query. *mustSupport* indicates that a system supports an element but does not prescribe exactly what the system must do with supported elements. Data might be persisted, displayed, relayed, analyzed, tabulated or used in a variety of other fashions. The behavior of a given system should be unsurprising given its context, but it is still important to recognize that not all systems will persist the data they receive.
+
+### Access permissions
+
+Even if a system stores a given data element, that does not mean it will always include that element when responding to queries. Systems will have access permission rules that restrict who can see a given resource instance and, occasionally, who can see a particular data element within a resource. Systems responding to queries might suppress records or may adjust the content of resource instances to exclude data elements the querying system is not permitted to see.
+
+### Generated and inferred data
+
+Some servers may add additional data elements (or more commonly, extensions) based on information they have generated or inferred from data in the resource, from other resources or other information of which the server is aware. i.e. an instance queried after being created or updated might have *more* information present than was included on the originally submitted record
+
+### Data integration
+
+Servers receiving updates from multiple sources may choose to be selective about what sources they choose to trust for updates to certain information. For example, a patient registry system might choose to only allow updates to name, gender and date of birth from administrative systems but not clinical systems. If a system filters out patient address information from being disclosed to a system when it queries, it will likely choose to not replace or eliminate the addresses it has on file when it receives an update from that system.
+
+One approach commonly followed by HL7 version 2 messaging interfaces is to not update any elements not included in an instance. For example, if a Patient instance were received with no telecom or contact information, all existing telecom and contact information would be retained and only those elements included in the instance would be updated. This same approach can be followed with FHIR, however, unlike [HL7 V2](http://www.hl7.org/implement/standards/product_brief.cfm?product_id=185), FHIR does not have a defined construct to use to indicate that a particular data element should explicitly be set to empty. Systems wishing to fully emulate HL7 v2 behavior will need to use an extension to mirror this behavior.
+
+### Ramifications of storage/retrieval variations
+
+While changing data prior to storage or prior to returning query results is possible, it should not be considered "normal" behavior. It creates several challenges:
+
+-   Digital signatures will no longer be valid. Any change to submitted data will break standard signatures. In theory, this could be mitigated by using a custom canonicalization for the signature that excludes malleable elements. However, this would require both sender and receiver to agree on the alternate signature canonicalization. The signature would still be considered invalid by systems that were not party to the agreement.
+-   Workflows can be made more complex. A system that sends a create and then sends an update presuming that it has seen the most "current" version, could accidentally overwrite information set by the server as part of the create process.
+-   Audit becomes more complicated. The [AuditEvent](auditevent.html) resource points to a specific resource version when tracking what data was returned by a query. If the record is modified when it is returned, then the audit record will likely need to be supplemented with information about what elements were filtered.
+-   Multiple views of the same information by different people (or even by the same people in different contexts) may cause confusion, particularly when attempting to coordinate care across a team. Providing OperationOutcome instances containing warnings if information has been suppressed may be helpful, though doing this might not be possible, depending on security policy rules.
+-   If data is lost as part of the transmission process, then multiple stages of transmission (or even round-tripping of data) could result in significant degradation as information passes through multiple systems.
+
+### Mitigation approaches for storage/retrieval variations
+
+FHIR does provide a couple of mechanisms that can help with the issue of a system that has received only partial data overwriting data that was filtered from its record:
+
+-   For systems that enforce the use of [ETags](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.19) for updates, the server can choose to not include an ETag when returning resource instances that have been modified in some way. This will prevent updates from being performed.
+-   The [SUBSETTED](v3/vs/SecurityIntegrityObservationValue/cs.html#SUBSETTED) [Security Label](security-labels.html) can be used to flag data that has had information removed.
+
+Note that using either of the above mechanisms may constitute a security breach in circumstances where the individual or system accessing the data should not know that the record being reviewed has been modified in any way. (The presence of digital signatures would present a similar issue.)
+
+\[%file newfooter%\]

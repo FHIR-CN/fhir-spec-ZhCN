@@ -1,0 +1,34 @@
+<div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/1999/xhtml ../../schema/fhir-xhtml.xsd" xmlns="http://www.w3.org/1999/xhtml">
+
+<div>
+
+<a name="scope"></a>
+<h2>Scope and Usage</h2>
+<p>
+This resource is an administrative resource that tracks individual instances of a device and their location. It is referenced by other resources for recording which device performed an action such as a procedure or an observation, referenced when prescribing and dispensing devices for patient use or for ordering supplies, and used to record and transmit <a href="#udi">Unique Device Identifier (UDI)</a> information about a device such as a patient's implant.
+</p>
+
+</div>
+
+<div>
+<a name="bnr"></a>
+<h2>Boundaries and Relationships</h2>
+<p>
+These are the device related resources
+</p>
+<ul>
+ <li>Device (this resource)</li>
+ <li><a href="devicedefinition.html">DeviceDefinition</a> - Describes a "kind" of device - not a physical instance, cut a "catalog entry" where a device is defined by the manufacturer, reseller, or regulator.</li>
+ <li><a href="devicemetric.html">DeviceMetric</a> - Describes a measurement, calculation or setting  capability of a medical device.</li>
+</ul>
+<p>
+In FHIR, the "Device" is the "administrative" resource for the device (it does not change much and has manufacturer information etc.), whereas the DeviceComponent and DeviceMetric (which is really a kind of DeviceComponent) model the physical part, including operation status and is much more volatile.
+
+The physical composition of a Device is represented by the Devices pointing to their "parent". </p>
+<p>
+Devices differ from medications because they are not "used up" - they remain active in a patient in an ongoing fashion.  However, the specific boundary between medications and devices is defined at the implementation level and this standard does not enforce a boundary with the exception of devices that are implanted in a patient.   The <a href="medication.html">Medication</a> resource should not be used to represent implanted devices.
+</p>
+
+</div>
+
+</div>

@@ -1,0 +1,20 @@
+﻿<div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/1999/xhtml ../../schema/fhir-xhtml.xsd" xmlns="http://www.w3.org/1999/xhtml">
+
+<div>
+<a name="scope"></a>
+<h2>Scope and Usage</h2>
+ <p>A research subject is the entity of interest in a research study, typically a human being or an animal, but can also be a device, group of humans or animals, or a tissue sample. The ResearchSubject resource describes essential information about the subject, including the gender, birthdate, study, study arm, consent status, and other key items. Human research subjects are usually not traceable to a particular person to protect the subject’s privacy.</p>
+    <p>The ResearchSubject resource is used in the following research activities:</p>
+    <ul>
+      <li>Consent and registration to a research study
+      </li>
+      <li>Exposure to test therapy
+      </li>
+      <li>Assessment of test therapy results
+	  </li>
+      <li>Reporting of adverse events
+      </li>
+    </ul>
+</div>
+
+</div>

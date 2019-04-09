@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+
+<!-- template-print.html -->
+      
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+[%file newheader%]
+</head>
+<body>
+[%file newnavbar%]
+
+<div class="col-12">
+
+
+<h1>Resource Definition: <%title%></h1>
+<!-- <p class="status">Status: <%status%></p> -->
+<p>
+<%definition%>.
+</p>
+<%resurl%>
+<%introduction%>
+<h2>
+Resource Content
+</h2>
+<a name="uml"></a>
+<%svg A%>
+
+<a name="def"></a>
+<%xml%>
+
+<p>Alternate definitions: 
+Master Definition (<a href="<%name%>.profile.xml.html">XML</a>, <a href="<%name%>.profile.json.html">JSON</a>),
+<a href="<%name%>.xsd">Schema</a>/<a href="<%name%>.sch">Schematron</a>, <a href="<%name%>.shex.html">ShEx</a> (for <a href="rdf.html">Turtle</a>)</p>
+
+<%tx%>
+
+<%inv%>
+
+<%notes%>
+
+<a name="examples"></a>
+
+<h2>Examples</h2>
+<table class="list">
+  <%examples%>
+</table>
+
+<%search%>
+
+<a name="desc"></a>
+
+<h2>Detailed Descriptions</h2>
+
+<p>The Detailed Descriptions for the elements above</p>
+
+<%dictionary%>
+
+</div>
+
+[%file newfooter%]
+
+   
+</body>
+</html>

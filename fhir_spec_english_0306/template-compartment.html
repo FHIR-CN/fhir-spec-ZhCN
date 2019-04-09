@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+
+<!-- template-compartment.html -->
+      
+[%settitle Compartment {comp-title}%]
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+[%file newheader%]
+</head>
+<body>
+[%file newnavbar%]
+
+<div class="col-12">
+
+<%pageheader%>
+<h1>Compartment <%comp-title%></h1>
+<table class="colstu"><tr><td id="wg"><a _target="blank" href="[%wg fhir%]">[%wgt fhir%]</a> Work Group</td><td id="fmm"><a href="versions.html#maturity">Maturity Level</a>: N/A</td><td id="ballot"><a href="versions.html#std-process">Standards Status</a>:<!--!ns!--><a href="versions.html#std-process">Trial Use</a></td></tr></table>
+
+<table class="grid">
+ <tr><td>Formal URI</td><td><%comp-uri%></td></tr>
+ <tr><td>Description</td><td><%comp-desc%></td></tr>
+ <tr><td>Identity</td><td><%comp-identity%></td></tr>
+ <tr><td>Membership</td><td><%comp-membership%></td></tr>
+ <tr><td>Formal Definition</td><td><a href="compartmentdefinition.html">CompartmentDefinition</a>resource: <a href="compartmentdefinition-<%comp-name%>.xml.html">XML</a> or <a href="compartmentdefinition-<%comp-name%>.json.html">JSON</a></td></tr>
+</table>
+
+<p>
+Resource based membership rules:
+</p>
+
+<%comp-resources%>
+
+<p>
+See <a href="compartmentdefinition.html"> information about compartments</a>.  
+</p>
+
+
+</div>
+
+[%file newfooter%]
+    
+</body>
+</html>
